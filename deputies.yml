@@ -19,7 +19,7 @@ spring:
         password: 'root'
         username: root
         platform: mysql
-        url: jdbc:mysql://localhost/deputies?verifyServerCertificate=false&useSSL=false&requireSSL=false?createDatabaseIfNotExist=true
+        url: jdbc:mysql://localhost/deputies?verifyServerCertificate=false&useSSL=false&requireSSL=false&createDatabaseIfNotExist=true
         initialization-mode: always
         testWhileIdle: true
     jpa:
