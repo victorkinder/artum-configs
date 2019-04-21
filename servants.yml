@@ -27,7 +27,4 @@ spring:
         generate-ddl: false
         hibernate:
             ddl-auto: none
-        show-sql: true    
-    
-    liquibase:
-        change-log: classpath:/db/changelog-master.yml
+        show-sql: true
