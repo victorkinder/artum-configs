@@ -1,0 +1,32 @@
+server:
+  port: 9095
+
+eureka:
+  instance:
+    hostname: localhost
+    port: 9091
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000
+
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: 'root'
+        username: root
+        platform: mysql
+        url: jdbc:mysql://localhost/expenses?verifyServerCertificate=false&useSSL=false&requireSSL=false&createDatabaseIfNotExist=true
+        initialization-mode: always
+        testWhileIdle: true
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+        show-sql: true        
+    liquibase:
+        change-log: classpath:/db/changelog-master.yml
